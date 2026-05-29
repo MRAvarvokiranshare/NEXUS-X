@@ -108,27 +108,6 @@ Install dependencies
 Run main.py
 Choose tool from menu
 Use CLI or Web Dashboard
-<p align="center">
-
-# tst
-
-<img width="1080" height="2197" alt="1000431992" src="https://github.com/user-attachments/assets/e3306076-f424-48d1-a754-1c689080dbe4" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 اثری از : https://instagram.com/elieah_jahanshahi
 
 
