@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>NEXUS Dashboard</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            background:#0b0f19;
+            color:white;
+            font-family:Arial;
+            display:flex;
+            min-height:100vh;
+        }
+
+        .sidebar{
+            width:250px;
+            background:#111827;
+            padding:30px 20px;
+            border-right:1px solid #1f2937;
+        }
+
+        .logo{
+            font-size:28px;
+            font-weight:bold;
+            color:#00d4ff;
+            margin-bottom:40px;
+        }
+
+        .menu{
+            display:flex;
+            flex-direction:column;
+            gap:15px;
+        }
+
+        .menu a{
+            text-decoration:none;
+            color:white;
+            background:#1f2937;
+            padding:14px;
+            border-radius:12px;
+            transition:0.3s;
+        }
+
+        .menu a:hover{
+            background:#00d4ff;
+            color:black;
+            transform:translateX(5px);
+        }
+
+        .main{
+            flex:1;
+            padding:40px;
+        }
+
+        .title{
+            font-size:36px;
+            margin-bottom:30px;
+            color:#00d4ff;
+        }
+
+        .grid{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+            gap:20px;
+        }
+
+        .card{
+            background:rgba(255,255,255,0.05);
+            border:1px solid rgba(255,255,255,0.1);
+            backdrop-filter:blur(10px);
+            padding:25px;
+            border-radius:20px;
+            transition:0.3s;
+        }
+
+        .card:hover{
+            transform:translateY(-5px);
+            border-color:#00d4ff;
+        }
+
+        .card h2{
+            margin-bottom:20px;
+            color:#00d4ff;
+        }
+
+        input{
+            width:100%;
+            padding:14px;
+            border:none;
+            border-radius:12px;
+            background:#1f2937;
+            color:white;
+            margin-bottom:15px;
+        }
+
+        button{
+            width:100%;
+            padding:14px;
+            border:none;
+            border-radius:12px;
+            background:#00d4ff;
+            color:black;
+            font-weight:bold;
+            cursor:pointer;
+            transition:0.3s;
+        }
+
+        button:hover{
+            opacity:0.8;
+        }
+
+        pre{
+            margin-top:20px;
+            background:#111827;
+            padding:20px;
+            border-radius:12px;
+            overflow:auto;
+        }
+
+        img{
+            width:220px;
+            background:white;
+            padding:10px;
+            border-radius:12px;
+            margin-top:20px;
+        }
+
+        @media(max-width:900px){
+
+            body{
+                flex-direction:column;
+            }
+
+            .sidebar{
+                width:100%;
+                border-right:none;
+                border-bottom:1px solid #1f2937;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="sidebar">
+
+        <div class="logo">
+            NEXUS
+        </div>
+
+        <div class="menu">
+
+            <a href="#">Dashboard</a>
+            <a href="#">IP Lookup</a>
+            <a href="#">QR Generator</a>
+            <a href="#">Developer Tools</a>
+            <a href="#">Social Tools</a>
+
+        </div>
+
+    </div>
+
+    <div class="main">
+
+        <div class="title">
+            Modern Developer Toolkit
+        </div>
+
+        <div class="grid">
+
+            <div class="card">
+
+                <h2>IP Lookup</h2>
+
+                <form action="/iplookup" method="POST">
+
+                    <input
+                        type="text"
+                        name="target"
+                        placeholder="8.8.8.8"
+                    >
+
+                    <button type="submit">
+                        Analyze IP
+                    </button>
+
+                </form>
+
+            </div>
+
+            <div class="card">
+
+                <h2>QR Generator</h2>
+
+                <form action="/qr" method="POST">
+
+                    <input
+                        type="text"
+                        name="text"
+                        placeholder="Enter link or text"
+                    >
+
+                    <button type="submit">
+                        Generate QR
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+        {% if result %}
+
+        <div class="card" style="margin-top:20px;">
+
+            <h2>Result</h2>
+
+            <pre>{{ result }}</pre>
+
+        </div>
+
+        {% endif %}
+
+        {% if error %}
+
+        <div class="card" style="margin-top:20px;">
+
+            <h2>Error</h2>
+
+            <pre>{{ error }}</pre>
+
+        </div>
+
+        {% endif %}
+
+        {% if qr_image %}
+
+        <div class="card" style="margin-top:20px;">
+
+            <h2>QR Code</h2>
+
+            <img src="{{ qr_image }}">
+
+        </div>
+
+        {% endif %}
+
+    </div>
+
+</body>
+
+</html>
