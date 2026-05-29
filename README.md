@@ -108,19 +108,32 @@ Install dependencies
 Run main.py
 Choose tool from menu
 Use CLI or Web Dashboard
-
 <p align="center">
 
-<!-- Instagram -->
-<a href="https://www.instagram.com/elieah_jahanshahi_?igsh=ZHpiaWw0aWw0ZWE5">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" width="60"/>
-</a>
+# tst
 
-&nbsp;&nbsp;&nbsp;
+<img width="1080" height="2197" alt="1000431992" src="https://github.com/user-attachments/assets/e3306076-f424-48d1-a754-1c689080dbe4" />
 
-<!-- Telegram -->
-<a href="https://t.me/avarfilm">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" width="60"/>
-</a>
 
-</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+اثری از : https://instagram.com/elieah_jahanshahi
+
+
+با تشکر :https://t.me/avarfilm
+
+
+
+
